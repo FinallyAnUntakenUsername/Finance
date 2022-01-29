@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table style>
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                Stock
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Total
+            </th>
+        </tr>
+
+        {% for stock in stocks %}
+            <tr>
+                <td>
+                    {{ stock["date"] }}
+                </td>
+                <td>
+                    {{ stock["symbol"] }}
+                </td>
+                <td>
+                     {{ stock["price"] }}
+                </td>
+                <td>
+                     {{ stock["amount"] }}
+                </td>
+                <td>
+                      {{ stock["total"] }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

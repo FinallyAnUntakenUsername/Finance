@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table style>
+        <tr>
+            <th>
+                Stock
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Price of a stock
+            </th>
+            <th>
+                Holding
+            </th>
+        </tr>
+
+        {% for stock in stocks %}
+            <tr>
+                <td>
+                    {{ stock["symbol"] }}
+                </td>
+                <td>
+                     {{ stock["amount"] }}
+                </td>
+                <td>
+                     {{ stock["price"] }}
+                </td>
+                <td>
+                      {{ stock["total"] }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
